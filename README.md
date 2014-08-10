@@ -14,17 +14,13 @@ $> git clone https://github.com/mitch-b/web
 $> cd web
 ```
 
-##Dependency & Setup
-
-###Windows
-You'll want to ensure Fabric [can be installed](http://docs.fabfile.org/en/1.4.3/installation.html). Might be easiest to [install precompiled libraries](http://www.voidspace.org.uk/python/modules.shtml#pycrypto) as found here (according to your Python installation). Real easy to setup.
-
-```cmd
-C:\web\> pip install -r requirements-win.txt
-C:\web\> git update-index --assume-unchanged fabfile.py
+##Create new VirtualEnv (Optional)
+```bash
+$> virtualenv ~/venv/web && source ~/venv/web/bin/activate
 ```
 
-###Non-Windows
+##Dependency & Setup
+
 ```bash
 $> pip install -r requirements.txt
 $> git update-index --assume-unchanged Makefile
@@ -40,16 +36,6 @@ $> cd output && python -m SimpleHTTPServer
 Now, view your site at [http://localhost:8000/](http://localhost:8000)
 
 ##Deploying
-
-###Windows
-
-Edit `fabfile.py` to include proper release details.
-
-```cmd
-C:\web\> fab publish
-```
-
-###Non-Windows
 
 Edit `Makefile` to include proper release details.
 
