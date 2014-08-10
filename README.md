@@ -1,12 +1,10 @@
 mitchbarry.com
 ==============
 
-Personal Website & Blog
-
-Built with [Pelican](http://getpelican.com)!
+Personal Website & Blog built with [Pelican](http://getpelican.com)!
 
 ##Required Software
-1. Python (>2.4)
+1. Python (2.4+, 3.0+)
 1. pip
 
 ##Getting Started
@@ -21,7 +19,7 @@ $> cd web
 ###Windows
 You'll want to ensure Fabric [can be installed](http://docs.fabfile.org/en/1.4.3/installation.html). Might be easiest to [install precompiled libraries](http://www.voidspace.org.uk/python/modules.shtml#pycrypto) as found here (according to your Python installation). Real easy to setup.
 
-```bash
+```cmd
 C:\web\> pip install -r requirements-win.txt
 C:\web\> git update-index --assume-unchanged fabfile.py
 ```
@@ -47,7 +45,7 @@ Now, view your site at [http://localhost:8000/](http://localhost:8000)
 
 Edit `fabfile.py` to include proper release details.
 
-```bash
+```cmd
 C:\web\> fab publish
 ```
 
