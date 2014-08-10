@@ -35,11 +35,75 @@ for Markdown style content
 """
 
 content_dir = 'content'
+default_category = 'misc'
 
 
 class ContentBuilder:
+    filename = ''
+    title = ''
+    slug = ''
+    category = ''
+    tags = []
+    summary = ''
+
     def __init__(self, **kwargs):
-        pass
+        self.filename = self.get_text_input(
+            prompt='FileName: ',
+            suggestion=None)
+        self.title = self.get_text_input(
+            prompt='Title: ',
+            suggestion=None)
+        self.slug = self.get_text_input(
+            prompt='Slug: ',
+            suggestion=self.format_slug(self.title))
+        self.category = self.get_text_input(
+            prompt='Category: ',
+            suggestion=default_category)
+        self.get_tags()
+        self.summary = self.get_text_input(
+            prompt='Summary: ',
+            suggestion=None)
+
+        if self.confirm():
+            self.create_file()
+        else:
+            print 'Exiting...\n'
+
+    def confirm(self):
+        print 'About to write new file: \n'
+        print 'FileName: %s' % self.filename
+        print 'Title: %s' % self.title
+        print 'Slug: %s' % self.slug
+        print 'Category: %s' % self.category
+        print 'Tags: %s' % str(self.tags)
+        print 'Summary: %s' % self.summary
+        return raw_input('Is the above information correct? [y/N] ').upper() == 'Y'
+
+    def create_file(self):
+        print 'Creating file... {0}/{1}/{2}.md'.format(
+            content_dir,
+            self.category,
+            self.filename)
+
+    def format_slug(self, title):
+        return title.replace(' ', '-').lower()
+
+    def get_text_input(self, prompt, suggestion=None):
+        if suggestion:
+            prompt = '{0} [{1}] '.format(prompt, suggestion)
+        user_input = raw_input(prompt)
+        if not user_input:
+            user_input = suggestion
+        return user_input
+
+    def get_tags(self):
+        i = 0
+        tag = ''
+        while tag != '' or i == 0:
+            i += 1
+            if tag:
+                self.tags.append(tag)
+            tag = raw_input('Tags [blank to stop]: ')
 
 
 if __name__ == '__main__':
