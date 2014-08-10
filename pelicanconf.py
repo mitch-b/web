@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Mitchell Barry'
 AUTHOR_EMAIL = u'mitch.barry@gmail.com'
 SITENAME = u'Mitchell Barry'
-SITEURL = 'http://localhost:8000/'
+SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 THEME = 'notmyidea'
