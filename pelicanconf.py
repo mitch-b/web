@@ -26,13 +26,11 @@ TRANSLATION_FEED_ATOM = None
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['gravitar','sitemap','tipue_search',]
 
-# Blogroll
-# LINKS = (('Pelican', 'http://getpelican.com/'),)
-
 # Social widget
 SOCIAL = (('google-plus', 'https://google.com/+MitchellBarry'),
           ('github', 'https://github.com/mitch-b'),
-          ('twitter','https://twitter.com/mitchbarry'),)
+          ('twitter','https://twitter.com/mitchbarry'),
+          ('rss','http://mitchbarry.com/feeds/all.atom.xml'),)
 
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [
@@ -42,7 +40,6 @@ MENUITEMS = [
 
 ARTICLE_URL = '{slug}/'
 ARTICLE_SAVE_AS = '{slug}/index.html'
-# ARTICLE_EXCLUDES = [('projects'),]
 
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
