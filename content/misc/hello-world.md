@@ -1,8 +1,8 @@
-Title: Welcome
-Date: 2014-08-08 00:00
-Modified: 2014-08-08 00:00
+Title: Hello, World!
+Date: 2014-08-10 23:11
+Modified: 2014-08-10 23:11
 Tags: blog
-Slug: welcome
+Slug: hello-world
 Summary: The new home for me on the Internet
 
 It's been a long time, Internet.

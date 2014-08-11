@@ -29,8 +29,7 @@ PLUGINS = ['gravitar','sitemap','tipue_search',]
 # Social widget
 SOCIAL = (('google-plus', 'https://google.com/+MitchellBarry'),
           ('github', 'https://github.com/mitch-b'),
-          ('twitter','https://twitter.com/mitchbarry'),
-          ('rss','http://mitchbarry.com/feeds/all.atom.xml'),)
+          ('twitter','https://twitter.com/mitchbarry'),)
 
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [

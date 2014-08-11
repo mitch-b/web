@@ -28,6 +28,7 @@ __email__ = "mitch.barry@gmail.com"
 import os
 import sys
 import time
+import datetime
 
 """
 Python script to add new content to Pelican site with proper metadata
@@ -80,10 +81,28 @@ class ContentBuilder:
         return raw_input('Is the above information correct? [y/N] ').upper() == 'Y'
 
     def create_file(self):
-        print 'Creating file... {0}/{1}/{2}.md'.format(
+        filepath = '{0}/{1}/{2}.md'.format(
             content_dir,
             self.category,
             self.filename)
+        now = datetime.datetime.now()
+        print 'Creating file... {0}'.format(filepath)
+
+        directory = '{0}/{1}'.format(content_dir, self.category)
+        if not os.path.exists(directory):
+            print 'creating new category...'
+            os.makedirs(directory)
+        f = open(filepath, 'w')
+        f.write('Title: %s\n' % self.title)
+        f.write('Date: %s\n' % now.strftime('%Y-%m-%d %H:%M'))
+        f.write('Modified: %s\n' % now.strftime('%Y-%m-%d %H:%M'))
+        f.write('Tags: %s\n' % ','.join(self.tags))
+        f.write('Slug: %s\n' % self.slug)
+        f.write('Summary: %s\n' % self.summary)
+        f.write('\n')
+        f.close()
+        print 'File created!'
+
 
     def format_slug(self, title):
         return title.replace(' ', '-').lower()
