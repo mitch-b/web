@@ -37,9 +37,10 @@ Now, view your site at [http://localhost:8000/](http://localhost:8000)
 
 ##Deploying
 
-Edit `Makefile` to include proper release details.
+Run the `init_makefile.py` module to generate the Makefile you'll want for deployment. Answer the questions at each prompt, and the file will be created. Then you can run the following command to use rsync to deploy your source.
 
 ```bash
+$> python init_makefile.py # answer prompts
 $> make rsync_upload
 ```
 
