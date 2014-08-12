@@ -58,83 +58,83 @@ GITHUB_PAGES_BRANCH=gh-pages
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
-	PELICANOPTS += -D
+\tPELICANOPTS += -D
 endif
 
 help:
-	@echo 'Makefile for a pelican Web site                                        '
-	@echo '                                                                       '
-	@echo 'Usage:                                                                 '
-	@echo '   make html                        (re)generate the web site          '
-	@echo '   make clean                       remove the generated files         '
-	@echo '   make regenerate                  regenerate files upon modification '
-	@echo '   make publish                     generate using production settings '
-	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
-	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
-	@echo '   make stopserver                  stop local server                  '
-	@echo '   make ssh_upload                  upload the web site via SSH        '
-	@echo '   make rsync_upload                upload the web site via rsync+ssh  '
-	@echo '   make dropbox_upload              upload the web site via Dropbox    '
-	@echo '   make ftp_upload                  upload the web site via FTP        '
-	@echo '   make s3_upload                   upload the web site via S3         '
-	@echo '   make cf_upload                   upload the web site via Cloud Files'
-	@echo '   make github                      upload the web site via gh-pages   '
-	@echo '                                                                       '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
-	@echo '                                                                       '
+\t@echo 'Makefile for a pelican Web site                                        '
+\t@echo '                                                                       '
+\t@echo 'Usage:                                                                 '
+\t@echo '   make html                        (re)generate the web site          '
+\t@echo '   make clean                       remove the generated files         '
+\t@echo '   make regenerate                  regenerate files upon modification '
+\t@echo '   make publish                     generate using production settings '
+\t@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
+\t@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
+\t@echo '   make stopserver                  stop local server                  '
+\t@echo '   make ssh_upload                  upload the web site via SSH        '
+\t@echo '   make rsync_upload                upload the web site via rsync+ssh  '
+\t@echo '   make dropbox_upload              upload the web site via Dropbox    '
+\t@echo '   make ftp_upload                  upload the web site via FTP        '
+\t@echo '   make s3_upload                   upload the web site via S3         '
+\t@echo '   make cf_upload                   upload the web site via Cloud Files'
+\t@echo '   make github                      upload the web site via gh-pages   '
+\t@echo '                                                                       '
+\t@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
+\t@echo '                                                                       '
 
 html:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+\t$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+\t[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 
 regenerate:
-	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+\t$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 serve:
 ifdef PORT
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
+\tcd $(OUTPUTDIR) && $(PY) -m pelican.server $(PORT)
 else
-	cd $(OUTPUTDIR) && $(PY) -m pelican.server
+\tcd $(OUTPUTDIR) && $(PY) -m pelican.server
 endif
 
 devserver:
 ifdef PORT
-	$(BASEDIR)/develop_server.sh restart $(PORT)
+\t$(BASEDIR)/develop_server.sh restart $(PORT)
 else
-	$(BASEDIR)/develop_server.sh restart
+\t$(BASEDIR)/develop_server.sh restart
 endif
 
 stopserver:
-	kill -9 `cat pelican.pid`
-	kill -9 `cat srv.pid`
-	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
+\tkill -9 `cat pelican.pid`
+\tkill -9 `cat srv.pid`
+\t@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+\t$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+\tscp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
 rsync_upload: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
+\trsync -e "ssh -p $(SSH_PORT)" -P -rvzc --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
 
 dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
+\tcp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
 
 ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
+\tlftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
+\ts3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed --guess-mime-type
 
 cf_upload: publish
-	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
+\tcd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push origin $(GITHUB_PAGES_BRANCH)
+\tghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+\tgit push origin $(GITHUB_PAGES_BRANCH)
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
 """

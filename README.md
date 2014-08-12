@@ -5,7 +5,7 @@ Personal Website & Blog built with [Pelican](http://getpelican.com)!
 
 ##Required Software
 1. [Python](https://www.python.org/download/releases/2.7.8/) (2.4+, 3.0+)
-1. pip Python Package Manager ([pip Installation Guide](https://pip.pypa.io/en/latest/installing.html))
+1. pip Python Package Manager ([pip Installation Guide](https://pip.pypa.io/en/latest/installing.html)) - **already bundled with Python >= 3.4 release**
 
 ##Getting Started
 
@@ -19,11 +19,10 @@ $> cd web
 $> virtualenv ~/venv/web && source ~/venv/web/bin/activate
 ```
 
-##Dependency & Setup
+##Dependencies & Setup
 
 ```bash
 $> pip install -r requirements.txt
-$> git update-index --assume-unchanged Makefile
 ```
 
 ##Generating Static Site
