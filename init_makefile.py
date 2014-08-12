@@ -41,10 +41,10 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=mitchbarry.com
-SSH_PORT=22000
-SSH_USER=mitch
-SSH_TARGET_DIR=/srv/www/mitchbarry.com
+SSH_HOST=__SSH_HOST__
+SSH_PORT=__SSH_PORT__
+SSH_USER=__SSH_USER__
+SSH_TARGET_DIR=__SSH_TARGET_DIR__
 
 S3_BUCKET=my_s3_bucket
 
