@@ -4,8 +4,8 @@ mitchbarry.com
 Personal Website & Blog built with [Pelican](http://getpelican.com)!
 
 ##Required Software
-1. Python (2.4+, 3.0+)
-1. pip
+1. [Python](https://www.python.org/download/releases/2.7.8/) (2.4+, 3.0+)
+1. pip Python Package Manager ([pip Installation Guide](https://pip.pypa.io/en/latest/installing.html))
 
 ##Getting Started
 
