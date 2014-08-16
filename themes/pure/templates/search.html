@@ -1,5 +1,36 @@
 {% extends 'index.html' %}
-{% block title %}{{ page.title|striptags }} // {{ super() }}{% endblock title %}
+{% block title %}Search // {{ super() }}{% endblock title %}
+
+{% block head_description %}
+Search results for {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+
+{% block meta_tags_in_head %}
+{{ super() }}
+<meta property="og:title" content="Search · {{ SITENAME|striptags|e }}"/>
+<meta name="twitter:title" content="Search · {{ SITENAME|striptags|e }}">
+<meta property="og:url" content="{{ SITEURL }}/search.html" />
+<meta property="og:description" content="Search results for {{ SITENAME|striptags|e }} blog" />
+<meta name="twitter:description" content="Search results for {{ SITENAME|striptags|e }} blog">
+<meta property="og:site_name" content="{{ SITENAME|striptags|e }}" />
+<meta property="og:article:author" content="{{ AUTHOR }}" />
+{% endblock meta_tags_in_head %}
+
+{% block script %}
+{{ super() }}
+<script type="text/javascript" src="{{ SITEURL }}/assets/tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="{{ SITEURL }}/assets/tipuesearch/tipuesearch.min.js"></script>
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+         'mode' : 'json',
+         'show': 10,
+         'newWindow': false,
+         'contentLocation': 'tipuesearch_content.json'
+     });
+});
+</script>
+{% endblock script %}
 
 {% block content %}
 <div class="pure-g-r" id="layout">
@@ -7,7 +38,9 @@
     <div class="pure-u-1">
         <div class="content">
             <h1 class="content-subhead">SEARCH</h1>
-            <p>{{ page.content }}</p>
+            <div id="tipue_search_content">
+                <div id="tipue_search_loading"></div>
+            </div>
         </div>
     </div>
 </div>

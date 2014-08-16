@@ -49,6 +49,8 @@ PAGE_SAVE_AS = '{slug}/index.html'
 # These folders will copy from content to output directly
 STATIC_PATHS = ['images', 'assets', ]
 
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
+
 # Pure theme settings
 COVER_IMG_URL = '/images/zealandia.jpg'
 PROFILE_IMAGE_URL = '/images/glass.jpg'

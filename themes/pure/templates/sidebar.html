@@ -8,6 +8,13 @@
                 {% for title, link in MENUITEMS %}
                     <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
                 {% endfor %}
+                    <div class="searchbar">
+                        <form class="navbar-search" action="{{ SITEURL }}/search.html"
+                            onsubmit="return validateForm(this.elements['q'].value);">
+                            <input type="text" class="search-query" placeholder="Search"
+                                name="q" id="tipue_search_input" />
+                        </form>
+                    </div>
                     <p class="social">
                 {% for title, link in SOCIAL %}
                         <a href="{{ link }}" target="_blank">
