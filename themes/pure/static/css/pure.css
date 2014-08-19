@@ -110,7 +110,6 @@ pre {
     }
 
 .header-article {
-    width: 767px;
     max-width: 100%;
     text-align: right;
     padding-top: 4em;
@@ -321,7 +320,8 @@ pre {
     }
 
     .article-avatar {
-        float: none
+        float: none;
+        margin-left:0;
     }
 
     .about-author {
