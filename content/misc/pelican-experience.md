@@ -1,6 +1,6 @@
 Title: My Experience with Pelican
 Date: 2014-08-16 14:46
-Modified: 2014-08-17 12:59
+Modified: 2014-08-26 16:30
 Tags: pelican,python,blog
 Slug: experience-with-pelican
 Summary: Pelican has gotten me from 0 to what you're reading right now over the course of 2 days. How did it go?
@@ -43,6 +43,8 @@ I was surprised to find that Pelican doesn't provide a handy way of inserting ne
 This is one area where there are many pros and cons. Since I didn't want to spend too much time styling my site, I looked to the internet. Thankfully, Pelican does offer some [advertised themes](https://github.com/getpelican/pelican-themes) to choose from. I happened to really enjoy the Pure theme (see footer for details), and cloned the repo into my project. I eventually removed all the git references and started editing the files as just a subfolder of my current project. I tweaked some visuals, and modified the sidebar.
 
 *If I could do it all again*, I'd keep my theme as a git submodule, but a forked copy of the original PureTheme repo. In this way, I could still merge any updates the original author has made, while keeping any theme edits outside of my website repo.
+
+***UPDATE (26 August 2014)***: My theme has now been moved into a separate repo! I am a man of my word.
 
 ##Deploying
 I decided to not use GitHub Pages as my deployment destination, but instead use my own server. This meant that all I needed to do was drop my files on my webserver, and point [nginx](http://nginx.org/) to the right directory. Pelican does provide a nice Makefile which uses rsync to deploy all the site files if you choose. I did create an [`init_makefile.py`](https://raw.githubusercontent.com/mitch-b/web/master/init_makefile.py) script for anyone who wants to clone my site. By running the script, you can enter your own SSH values so you don't need to mess with editing the file or forgetting to do so.
