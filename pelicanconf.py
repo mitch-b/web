@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Mitchell Barry'
 AUTHOR_EMAIL = u'mitch.barry@gmail.com'
+ABOUT_AUTHOR = u'Software Developer, Person'
 SITENAME = u'Mitchell Barry'
 SITEURL = 'http://localhost:8000'
 
@@ -30,6 +31,11 @@ PLUGINS = ['gravitar','sitemap','tipue_search',]
 SOCIAL = (('google-plus', 'https://google.com/+MitchellBarry'),
           ('github', 'https://github.com/mitch-b'),
           ('twitter','https://twitter.com/mitchbarry'),)
+
+FOOTER_LINKS = (('Source', 'https://github.com/mitch-b/web'),
+                ('RSS', 'http://mitchbarry.com/feeds/all.atom.xml'),
+                ('Pelican', 'http://blog.getpelican.com/'),
+                ('PurePelican (fork)', 'https://github.com/mitch-b/pelican-purecss'),)
 
 DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [

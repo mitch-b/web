@@ -25,7 +25,13 @@
                     {% endif %}
                 </a>
                 <h2 class="article-info">{{ article.author }}</h2>
-                <small class="about-author">{{ article.about_author }}</small>
+                <small class="about-author">
+                    {% if article.about_author %}
+                        {{ article.about_author }}
+                    {% else %}
+                        {{ ABOUT_AUTHOR }}
+                    {% endif %}
+                </small>
                 <h5>Published</h5>
                 <p>{{ article.locale_date }}</p>
                 <a href="/">&larr;Home</a>

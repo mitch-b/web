@@ -4,6 +4,7 @@ Modified: 2014-08-26 15:09
 Tags: blog,web
 Slug: handling-external-links
 Summary: How to handle user experience on your site with external links
+About_author: muses about UX
 
 As I'm reading any given blog, I'm never sure how external links are handled.  External link? What are you talking about? These are links which point to a third-party domain from where you are. For example, you're currently on the `mitchbarry.com` domain -- but if I link to Google, that's taking you away from your current context.
 

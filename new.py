@@ -37,6 +37,7 @@ for Markdown style content
 
 content_dir = 'content'
 default_category = 'misc'
+about_author = 'Software Developer, Person'
 
 
 class ContentBuilder:
@@ -46,6 +47,7 @@ class ContentBuilder:
     category = ''
     tags = []
     summary = ''
+    author_summary = ''
 
     def __init__(self, **kwargs):
         self.filename = self.get_text_input(
@@ -64,6 +66,9 @@ class ContentBuilder:
         self.summary = self.get_text_input(
             prompt='Summary: ',
             suggestion=None)
+        self.author_summary = self.get_text_input(
+            prompt='About Author: ',
+            suggestion=about_author)
 
         if self.confirm():
             self.create_file()
@@ -78,6 +83,7 @@ class ContentBuilder:
         print 'Category: %s' % self.category
         print 'Tags: %s' % str(self.tags)
         print 'Summary: %s' % self.summary
+        print 'About_Author: %s' % self.author_summary
         return raw_input('Is the above information correct? [y/N] ').upper() == 'Y'
 
     def create_file(self):
@@ -99,6 +105,7 @@ class ContentBuilder:
         f.write('Tags: %s\n' % ','.join(self.tags))
         f.write('Slug: %s\n' % self.slug)
         f.write('Summary: %s\n' % self.summary)
+        f.write('About_author: %s\n' %s self.author_summary)
         f.write('\n')
         f.close()
         print 'File created!'
