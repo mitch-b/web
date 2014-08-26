@@ -5,7 +5,7 @@ Tags: fcc,python,net neutrality
 Slug: fcc-net-neutrality-public-comments
 Summary: Visualize what cities are saying to the FCC in their public comments
 
-* [Source Code](https://github.com/mitch-b/fcc-comments-tagcloud){:target="_blank"}
+* [Source Code](https://github.com/mitch-b/fcc-comments-tagcloud)
 
 ##Omaha, NE - Comments Tag Cloud
 ![Omaha, NE](https://camo.githubusercontent.com/b807b341d0d79d0481455759eeeb66700e58bc1c/687474703a2f2f692e696d6775722e636f6d2f6b4443537a4e322e706e67)

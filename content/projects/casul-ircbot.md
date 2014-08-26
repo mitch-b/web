@@ -5,7 +5,7 @@ Tags: python,irc
 Slug: casul-ircbot
 Summary: An interactive IRC bot for abraxas.pw
 
-* [Source Code](https://bitbucket.com/mitch-b/casul-ircbot-python){:target="_blank"}
+* [Source Code](https://bitbucket.com/mitch-b/casul-ircbot-python)
 
 This project was a direct result of my desire to learn the Python language. My friend was running an IRC server, and had a desire for a bot to perform some basic tasks for the users.
 

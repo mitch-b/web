@@ -5,9 +5,9 @@ Tags: python,git
 Slug: commit-aggregator
 Summary: A quick visual of your activity across major online source control platforms with Git commits
 
-* [Source Code for API](https://gitlab.com/mitch-b/commit-aggregator-python){:target="_blank"}
-* [Source Code for UI](https://gitlab.com/mitch-b/commit-aggregator-ui){:target="_blank"}
-* [Sample API](http://mitch.pythonanywhere.com/commits){:target="_blank"}
+* [Source Code for API](https://gitlab.com/mitch-b/commit-aggregator-python)
+* [Source Code for UI](https://gitlab.com/mitch-b/commit-aggregator-ui)
+* [Sample API](http://mitch.pythonanywhere.com/commits)
 
 It recently occurred to me that GitHub, as a closed source product, is home to a lot of the world's open source code. While that isn't necessarily a *bad* thing, it seems that if you aren't committing on GitHub, your open source contributions aren't being noticed. Now, that is a bad thing.
 

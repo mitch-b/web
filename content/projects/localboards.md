@@ -5,13 +5,13 @@ Tags: open nebraska, angular, ruby
 Slug: localboards
 Summary: Local Boards for Douglas County
 
-* [Local Boards API Source](https://github.com/noahkoch/api-localboards-org){:target="_blank"}
-* [Local Boards UI Source](https://github.com/jhannah/localboards-ui-redux){:target="_blank"}
-* [Demo](http://douglas.ne.localboards.org/){:target="_blank"}
+* [Local Boards API Source](https://github.com/noahkoch/api-localboards-org)
+* [Local Boards UI Source](https://github.com/jhannah/localboards-ui-redux)
+* [Demo](http://douglas.ne.localboards.org/)
 
 In November of 2013, I attended (along with about 50 others) Hack Omaha III, a civic hacking event. The purpose of the event was to bring together those interested in taking public data (which the organizers helped acquire in advance) and building a product which helps make the data relatable, and potentially interactive.
 
-There were many cool projects including an interactive public transit map, food inspection data, and school data dashboards. You can read more about the event [here](http://aviture.us.com/aviture-hosts-hack-omaha-iii-hack-with-a-vengance/){:target="_blank"} and more about Open Nebraska [here](http://opennebraska.io/){:target="_blank"}.
+There were many cool projects including an interactive public transit map, food inspection data, and school data dashboards. You can read more about the event [here](http://aviture.us.com/aviture-hosts-hack-omaha-iii-hack-with-a-vengance/) and more about Open Nebraska [here](http://opennebraska.io/).
 
 The project I was involved in, was creating a single place for Douglas County's boards and commissions. To this day, each government board with elected representatives handle their meetings, qualifications, openings, and data separately in disparate formats. Some in Word documents, PDFs, spreadsheets, and text files. None of these are easily consumable - which is only the start of the public's problem. Not only do members of the public need to know where this data exists, they also need to know *which* boards exist.
 

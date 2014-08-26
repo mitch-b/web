@@ -39,6 +39,13 @@ pre {
     margin-left: -25%;
 }
 
+.sidebar i.fa-external-link {
+    display:none;
+}
+.footer i.fa-external-link {
+    display:none;
+}
+
 .cover-img {
     position: absolute;
     width: 100%;
@@ -358,4 +365,10 @@ pre {
     .cover-img {
         background-position: 0;
     }
+}
+
+.external-link-margin {
+    margin-left:3px;
+    vertical-align: super;
+    font-size:.7em;
 }
