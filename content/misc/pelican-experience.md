@@ -19,7 +19,7 @@ Rather than building my own CMS, or dealing with [WordPress](https://wordpress.c
 
 All I needed to do, was run a single command to jump-start my site!
 
-    #!bash
+    :::bash
     $> pelican-quickstart
 
 After answering a few prompts, it created a nice looking structure (courtesy Pelican [docs](http://docs.getpelican.com/en/3.4.0/install.html#kickstart-your-site)):
