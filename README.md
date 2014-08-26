@@ -14,6 +14,12 @@ $> git clone https://github.com/mitch-b/web
 $> cd web
 ```
 
+The [Pure CSS theme](https://github.com/mitch-b/pelican-purecss) lives in another repo. To pull it into your local workspace, initialize the submodule.
+
+```bash
+$> git submodule update --init --recursive
+```
+
 ##Create new VirtualEnv (Optional)
 ```bash
 $> virtualenv ~/venv/web && source ~/venv/web/bin/activate
