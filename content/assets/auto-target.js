@@ -37,7 +37,8 @@
  */
 
 (function() {
-    var hostname = window.location.hostname;
+    var hostname = window.location.host;
+    hostname = hostname.split('.').slice(-2).join('.');
     var new_tab = true;
     var set_icon = true;
     for (var links = document.links, i = 0, a; a = links[i]; i++) {
