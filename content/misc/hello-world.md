@@ -4,6 +4,7 @@ Modified: 2014-08-10 23:11
 Tags: blog
 Slug: hello-world
 Summary: The new home for me on the Internet
+Comments: off
 
 It's been a long time, Internet.
 
