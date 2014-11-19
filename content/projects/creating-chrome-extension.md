@@ -7,7 +7,7 @@ Summary: While at work, I thought of a quick way to speed up some of the waiting
 About_author: tries to improve productivity
 
 * [Source Code](https://github.com/mitch-b/sap-note-chrome-extension)
-* [SAP Support Note QuickLauncher](https://chrome.google.com/webstore/detail/sap-support-note-quicklau/coihbaakfmcepaofjibgkalgpjpbjnnm)
+* [SAP Support Note QuickLaunch](https://chrome.google.com/webstore/detail/sap-support-note-quicklau/coihbaakfmcepaofjibgkalgpjpbjnnm)
 
 After recently receiving my S-User login credentials from work to start poking around SAP's knowledgebase, I discovered the pain that is searching for SAP Notes. I did notice that linking to a note had an easy to read URL, with the note number simply appended at the end.
 
