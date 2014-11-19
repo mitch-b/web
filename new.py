@@ -105,7 +105,7 @@ class ContentBuilder:
         f.write('Tags: %s\n' % ','.join(self.tags))
         f.write('Slug: %s\n' % self.slug)
         f.write('Summary: %s\n' % self.summary)
-        f.write('About_author: %s\n' %s self.author_summary)
+        f.write('About_author: %s\n' % self.author_summary)
         f.write('\n')
         f.close()
         print 'File created!'
