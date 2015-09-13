@@ -41,6 +41,7 @@ DISPLAY_PAGES_ON_MENU = False
 MENUITEMS = [
 	('Archive', 'archives.html'),
 	('About', 'about/'),
+    ('Contact', 'contact/'),
 	('Projects', 'category/projects.html'), ]
 
 ARTICLE_URL = '{slug}/'
@@ -53,7 +54,7 @@ PAGE_SAVE_AS = '{slug}/index.html'
 #RELATIVE_URLS = True
 
 # These folders will copy from content to output directly
-STATIC_PATHS = ['images', 'assets', ]
+STATIC_PATHS = ['images', 'assets']
 
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search'))
 
